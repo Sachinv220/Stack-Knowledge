@@ -1,0 +1,11 @@
+
+
+section h3, p{
+    color: white;
+}
+
+section{
+    padding-bottom: 1em;
+    max-width: 65%;
+    text-align: justify;
+}
