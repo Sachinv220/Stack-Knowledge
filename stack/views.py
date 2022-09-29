@@ -66,5 +66,12 @@ def delete_post(request, id):
     if post.user != request.user:
         see = False
 
-    print(post.user, see)
-    return render(request, "delete.html", context={"post":post, "title":f"delete{post}", "see":see})
+    if "logout" in request.POST:
+        logout(request)
+        return redirect(reverse(login_redirect))
+    
+    elif request.POST:
+        Questions.objects.get(pk=id).delete()
+        return redirect(reverse("stack:posts"))
+
+    return render(request, "delete.html", context={"post":post, "title":f"delete {post}", "see":see})
