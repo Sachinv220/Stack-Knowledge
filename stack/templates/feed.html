@@ -2,12 +2,12 @@
 <link rel="stylesheet" href="{% static 'css/feed.css' %}" />
 <main>
   {% for x in questions %}
-    <section>
-      <h3>{{x.user.username}}</h3>
-      <p>{{x.question}}</p>
-      <a href="{% url 'stack:comments' x.id %}">view answers</a>
-      <hr style="color:white">
-    </section>
+  <section>
+    <h3>{{x.user.username}}</h3>
+    <p>{{x.question}}</p>
+    <a href="{% url 'stack:comments' x.id %}">view answers</a>
+    <hr style="color: white" />
+  </section>
   {% endfor %}
 </main>
 {% endblock sidebar %}

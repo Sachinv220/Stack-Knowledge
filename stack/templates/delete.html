@@ -1,15 +1,10 @@
-{% extends 'sidebar.html' %}
-
-{% block sidebar %}
-{% if see %}
+{% extends 'sidebar.html' %} {% block sidebar %} {% if see %}
 <h1>are you sure you want to delete this Question</h1>
 <h2>{{post.question}}</h2>
 <form method="post">
-    {% csrf_token %}
-    <button class="btn btn-outline-danger">Delete</button>
+  {% csrf_token %}
+  <button class="btn btn-outline-danger">Delete</button>
 </form>
 {% else %}
-    <h1>you don't have permission for this page</h1>
-{% endif %}
-
-{% endblock sidebar %}
+<h1>you don't have permission for this page</h1>
+{% endif %} {% endblock sidebar %}

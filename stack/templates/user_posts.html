@@ -1,11 +1,18 @@
 {% extends 'sidebar.html' %} {% block sidebar %} {% load static %}
-<link rel="stylesheet" href="{% static '/css/posts.css' %}">
+<link rel="stylesheet" href="{% static '/css/posts.css' %}" />
 <main>
-    {% for x in questions %}
-    <section>
-      <h4>{{x.question}} <a class="btn btn-outline-danger btn-sm" href="{% url 'stack:delete' x.pk %}">delete</a></h4>
-      <a href="{% url 'stack:comments' x.id %}">View Answers</a>
-    </section>
-    {% endfor %}
+  {% for x in questions %}
+  <section>
+    <h4>
+      {{x.question}}
+      <a
+        class="btn btn-outline-danger btn-sm"
+        href="{% url 'stack:delete' x.pk %}"
+        >delete</a
+      >
+    </h4>
+    <a href="{% url 'stack:comments' x.id %}">View Answers</a>
+  </section>
+  {% endfor %}
 </main>
 {% endblock sidebar %}
