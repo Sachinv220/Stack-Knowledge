@@ -1,6 +1,6 @@
 {% extends 'sidebar.html' %} {% block sidebar %} {% if see %}
 <h1>are you sure you want to delete this Question</h1>
-<h2>{{post.question}}</h2>
+<h2>{{post.question | safe}}</h2>
 <form method="post">
   {% csrf_token %}
   <button class="btn btn-outline-danger">Delete</button>

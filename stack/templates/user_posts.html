@@ -4,7 +4,7 @@
   {% for x in questions %}
   <section>
     <h4>
-      {{x.question}}
+      {{x.question | safe}}
       <a
         class="btn btn-outline-danger btn-sm"
         href="{% url 'stack:delete' x.pk %}"

@@ -4,11 +4,8 @@
   <h1>Ask you question</h1>
   <form method="post">
     {% csrf_token %}
-    <input
-      name="question"
-      class="form-control"
-      placeholder="Ask your question"
-    />
+    {{form.media}}
+    {{form.as_p}}
     <button class="btn btn-primary">Ask</button>
   </form>
 </section>

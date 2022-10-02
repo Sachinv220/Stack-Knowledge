@@ -1,11 +1,15 @@
 
 
-section h3, p{
+.questions h3, p{
     color: white;
 }
 
-section{
+.questions {
     padding-bottom: 1em;
     max-width: 65%;
     text-align: justify;
+}
+
+.questions {
+    background-color: rgb(37, 37, 37);
 }
