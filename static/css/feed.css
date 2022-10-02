@@ -1,15 +1,22 @@
-
-
 .questions h3, p{
     color: white;
 }
 
+main 
+{
+    max-width: 65%;
+}
+
 .questions {
     padding-bottom: 1em;
-    max-width: 65%;
     text-align: justify;
 }
 
 .questions {
+    border-radius: 16px;
     background-color: rgb(37, 37, 37);
+}
+
+.questions , p{
+    padding-left:1em;
 }
