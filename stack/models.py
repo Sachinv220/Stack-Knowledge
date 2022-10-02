@@ -1,17 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Questions(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    question = models.CharField(max_length=250)
+    question = RichTextField(blank=True, null = True)
 
     def __str__(self) -> str:
         return f"{self.user} asks {self.question}"
 
 class Answers(models.Model):
     post = models.ForeignKey(Questions, on_delete=models.CASCADE)
-    answer = models.CharField(max_length=255)
+    answer = RichTextField(blank=True, null = True)
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
