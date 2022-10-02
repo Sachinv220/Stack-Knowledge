@@ -1,0 +1,13 @@
+{% extends 'sidebar.html' %}{% load static %} {% block sidebar %}
+<link rel="stylesheet" href="{% static 'css/feed.css' %}" />
+<main>
+  {% for x in questions %}
+  <section class="questions">
+    <h3>{{x.user.username}}</h3>
+    <p>{{x.question | safe}}</p>
+    <a href="{% url 'stack:comments' x.id %}">view answers</a>
+  </section>
+  <hr style="color: white" />
+  {% endfor %}
+</main>
+{% endblock sidebar %}

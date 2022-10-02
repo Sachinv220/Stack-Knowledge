@@ -1,0 +1,16 @@
+h1, p {
+    color: white;
+}
+
+button{
+    margin-top: 3rem;
+}
+
+.answers {
+    background-color: rgb(37, 37, 37);
+}
+
+.answers img{
+    max-width: 600px !important;
+    max-height: 600px !important;
+}
