@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from . models import Answers, Questions
+from .forms import Question , Answer
 # Create your views here.
 
 login_redirect = "authenticate:login"
@@ -17,8 +18,10 @@ def ask_question(request):
         question = request.POST['question']
         user = request.user 
         Questions.objects.create(question=question, user=user)
+    
+    form = Question
 
-    return render(request, "ask.html", context={"title":"Ask"})
+    return render(request, "ask.html", context={"title":"Ask", "form":form})
 
 
 def feed(request):
@@ -45,10 +48,11 @@ def view_comments(request, num):
         answer = request.POST["answer"]
         Answers.objects.create(posted_by=request.user, post=post, answer
         =answer)
-    
     answers = Answers.objects.filter(post=post).all()
+
+    form = Answer()
     
-    return render(request, "view_comment.html", context={"title":"comments", "asked":post.user ,  "answers":answers})
+    return render(request, "view_comment.html", context={"title":"comments", "asked":post.user ,  "answers":answers, "form":form})
 
 @login_required(login_url=login_redirect)
 def user_posts(request):
