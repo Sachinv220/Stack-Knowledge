@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Roboto&display=swap');
 .questions h3, p{
     color: white;
 }
@@ -14,7 +14,7 @@ main
 }
 
 .questions {
-    font-family: 'Roboto' , "san-serif" !important;
+    font-family: 'M PLUS Rounded 1c',"Roboto",  sans-serif !important;
     border-radius: 16px;
     background-color: rgb(37, 37, 37);
 }
