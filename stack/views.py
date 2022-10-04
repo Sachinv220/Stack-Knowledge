@@ -56,6 +56,10 @@ def view_comments(request, num):
 
 @login_required(login_url=login_redirect)
 def user_posts(request):
+    if "logout" in request.POST:
+        logout(request)
+        return redirect(reverse(login_redirect))
+        
     posts = Questions.objects.filter(user=request.user).all()
 
     return render(request, "user_posts.html", context={"title":"Your post" , "questions":posts})
