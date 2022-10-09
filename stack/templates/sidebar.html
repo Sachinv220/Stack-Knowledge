@@ -18,7 +18,7 @@
     <title>{{title}}</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container">
       <div class="sidebar-active">
         <div class="side_links">
           <li>
@@ -32,6 +32,9 @@
           </li>
         </div>
         <div class="bottom_links">
+          <li>
+            <a href="{% url 'stack:answers' %}"><strong>Your Answers</strong></a>
+          </li>
           <form method="post">
             {% csrf_token %}
             <button name="logout" class="btn btn-danger">

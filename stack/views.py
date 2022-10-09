@@ -83,3 +83,12 @@ def delete_post(request, id):
         return redirect(reverse("stack:posts"))
 
     return render(request, "delete.html", context={"post":post, "title":f"delete {post}", "see":see})
+
+@login_required(login_url=login_redirect)
+def view_answers(request):
+    all_answers = Answers.objects.filter(posted_by=request.user).all()
+
+    if "logout" in request.POST:
+        return redirect(reverse(login_redirect))
+
+    return render(request, "view_answers.html", context={"title":"view answers" ,"answers": all_answers})

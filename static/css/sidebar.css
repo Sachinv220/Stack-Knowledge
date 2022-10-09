@@ -30,6 +30,10 @@ h1 , h2, h3, h4 , p{
     margin-top: 80%;
 }
 
+.bottom_links li {
+    margin-bottom: 1rem;
+}
+
 .sidebar-active li
 {
     margin-top: 1em;
