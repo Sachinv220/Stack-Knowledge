@@ -1,0 +1,13 @@
+{% extends 'sidebar.html' %} {% block sidebar %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/posts.css' %}" />
+{% for answer in answers %}
+<section class="answers">
+  <p>{{answer.post.question | safe }} {{answer.post.user}}</p>
+  <h4>{{answer.answer | safe }}</h4>
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" name={{answer.pk}}>delete</button>
+  </form>
+</section>
+{% endfor %} {% endblock sidebar %}
