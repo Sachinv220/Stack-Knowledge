@@ -10,5 +10,4 @@ urlpatterns = [
     path("comments/<int:num>/",views.view_comments, name="comments"),
     path("posts/", views.user_posts, name="posts"), 
     path("delete/<int:id>/", views.delete_post, name="delete"), 
-    path("answers/", views.view_answers, name="answers")
 ]
